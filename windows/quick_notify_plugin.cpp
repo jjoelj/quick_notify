@@ -37,7 +37,7 @@ class QuickNotifyPlugin : public flutter::Plugin {
       const flutter::MethodCall<flutter::EncodableValue> &method_call,
       std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
   
-  ToastNotifier toastNotifier_{ ToastNotificationManager::CreateToastNotifier(L"quick_notify") };
+  ToastNotifier toastNotifier_{ ToastNotificationManager::CreateToastNotifier(L"BlueBubbles") };
 };
 
 // static
@@ -45,7 +45,7 @@ void QuickNotifyPlugin::RegisterWithRegistrar(
     flutter::PluginRegistrarWindows *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "BlueBubbles",
+          registrar->messenger(), "quick_notify",
           &flutter::StandardMethodCodec::GetInstance());
 
   auto plugin = std::make_unique<QuickNotifyPlugin>();
