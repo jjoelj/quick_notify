@@ -35,7 +35,7 @@ static void quick_notify_plugin_handle_method_call(
     FlValue* args = fl_method_call_get_args(method_call);
     FlValue* content = fl_value_lookup_string(args, "content");
 
-    notify_init("quick_notify");
+    notify_init("BlueBubbles");
     NotifyNotification *n = notify_notification_new(0, fl_value_get_string(content), 0);
     notify_notification_show(n, 0);
     response = FL_METHOD_RESPONSE(fl_method_success_response_new(nullptr));
